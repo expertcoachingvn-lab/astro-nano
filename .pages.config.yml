@@ -3,7 +3,7 @@ media:
   input: public
   output: /
 
-# Định nghĩa các thư mục quản lý nội dung của Astro Nano
+# Định nghĩa các thư mục quản lý nội dung khớp chính xác với Astro Content Collections
 content:
   - name: blog
     label: Bài viết (Blog)
@@ -13,11 +13,13 @@ content:
     format: yaml-frontmatter
     view:
       primary: title
-      sort: date
-      order: desc
     fields:
+      - name: slug
+        label: Đường dẫn tĩnh (Slug - viết liền không dấu, ví dụ: bai-viet-moi)
+        type: string
+        required: true
       - name: title
-        label: Tiêu đề
+        label: Tiêu đề bài viết
         type: string
         required: true
       - name: description
@@ -37,14 +39,52 @@ content:
         type: rich-text
 
   - name: work
-    label: Dự án (Work)
+    label: Kinh nghiệm làm việc (Work)
     type: collection
     path: src/content/work
     filename: '{fields.slug}.md'
     format: yaml-frontmatter
     view:
+      primary: company
+    fields:
+      - name: slug
+        label: Tên file định danh (Slug - ví dụ: thiet-ke-web)
+        type: string
+        required: true
+      - name: company
+        label: Tên công ty
+        type: string
+        required: true
+      - name: role
+        label: Vị trí / Vai trò
+        type: string
+        required: true
+      - name: dateStart
+        label: Ngày bắt đầu
+        type: datetime
+        required: true
+      - name: dateEnd
+        label: Ngày kết thúc (Nếu còn làm ghi "Present", nếu đã nghỉ thì chọn ngày)
+        type: string
+        required: true
+        help: "Do hệ thống hỗ trợ cả chữ lẫn ngày, bạn hãy nhập dạng YYYY-MM-DD hoặc chữ 'Present'"
+      - name: body
+        label: Chi tiết công việc
+        type: rich-text
+
+  - name: projects
+    label: Dự án cá nhân (Projects)
+    type: collection
+    path: src/content/projects
+    filename: '{fields.slug}.md'
+    format: yaml-frontmatter
+    view:
       primary: title
     fields:
+      - name: slug
+        label: Đường dẫn dự án (Slug - ví dụ: phan-mem-quan-ly)
+        type: string
+        required: true
       - name: title
         label: Tên dự án
         type: string
@@ -56,11 +96,16 @@ content:
       - name: date
         label: Ngày thực hiện
         type: datetime
-      - name: demoUrl
-        label: Link Demo
+        required: true
+      - name: draft
+        label: Bản nháp
+        type: boolean
+        default: false
+      - name: demoURL
+        label: Link chạy thử (Demo URL)
         type: string
-      - name: repoUrl
-        label: Link Code (Github)
+      - name: repoURL
+        label: Link mã nguồn (GitHub URL)
         type: string
       - name: body
         label: Chi tiết dự án
