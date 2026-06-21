@@ -1,0 +1,67 @@
+# Cấu hình thư mục chứa hình ảnh/media
+media:
+  input: public
+  output: /
+
+# Định nghĩa các thư mục quản lý nội dung của Astro Nano
+content:
+  - name: blog
+    label: Bài viết (Blog)
+    type: collection
+    path: src/content/blog
+    filename: '{fields.slug}.md'
+    format: yaml-frontmatter
+    view:
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Tiêu đề
+        type: string
+        required: true
+      - name: description
+        label: Mô tả ngắn
+        type: string
+        required: true
+      - name: date
+        label: Ngày xuất bản
+        type: datetime
+        required: true
+      - name: draft
+        label: Bản nháp
+        type: boolean
+        default: false
+      - name: body
+        label: Nội dung bài viết
+        type: rich-text
+
+  - name: work
+    label: Dự án (Work)
+    type: collection
+    path: src/content/work
+    filename: '{fields.slug}.md'
+    format: yaml-frontmatter
+    view:
+      primary: title
+    fields:
+      - name: title
+        label: Tên dự án
+        type: string
+        required: true
+      - name: description
+        label: Mô tả dự án
+        type: string
+        required: true
+      - name: date
+        label: Ngày thực hiện
+        type: datetime
+      - name: demoUrl
+        label: Link Demo
+        type: string
+      - name: repoUrl
+        label: Link Code (Github)
+        type: string
+      - name: body
+        label: Chi tiết dự án
+        type: rich-text
