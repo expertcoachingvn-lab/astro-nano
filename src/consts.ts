@@ -1,44 +1,36 @@
 import type { Site, Metadata, Socials } from "@types";
 
 export const SITE: Site = {
-  NAME: "Astro Nano",
-  EMAIL: "markhorn.dev@gmail.com",
+  NAME: "HT Books",
+  EMAIL: "contact@expertcoaching.vn",
   NUM_POSTS_ON_HOMEPAGE: 3,
   NUM_WORKS_ON_HOMEPAGE: 2,
   NUM_PROJECTS_ON_HOMEPAGE: 3,
 };
 
 export const HOME: Metadata = {
-  TITLE: "Home",
-  DESCRIPTION: "Astro Nano is a minimal and lightweight blog and portfolio.",
+  TITLE: "Trang chủ",
+  DESCRIPTION: "Không gian tĩnh lặng của con chữ, tư duy tri thức và lối sống tỉnh thức.",
 };
 
 export const BLOG: Metadata = {
-  TITLE: "Blog",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
+  TITLE: "Bài viết",
+  DESCRIPTION: "Nơi chia sẻ những góc nhìn sâu sắc về tâm lý học, chuyển hóa và tri thức nhân văn.",
 };
 
 export const WORK: Metadata = {
-  TITLE: "Work",
-  DESCRIPTION: "Where I have worked and what I have done.",
+  TITLE: "Sự nghiệp",
+  DESCRIPTION: "Hành trình xây dựng và đóng góp giá trị.",
 };
 
 export const PROJECTS: Metadata = {
-  TITLE: "Projects",
-  DESCRIPTION: "A collection of my projects, with links to repositories and demos.",
+  TITLE: "Dự án",
+  DESCRIPTION: "Các dự án, tác phẩm và không gian sáng tạo đã và đang thực hiện.",
 };
 
 export const SOCIALS: Socials = [
   { 
-    NAME: "twitter-x",
-    HREF: "https://twitter.com/markhorn_dev",
-  },
-  { 
     NAME: "github",
-    HREF: "https://github.com/markhorn-dev"
-  },
-  { 
-    NAME: "linkedin",
-    HREF: "https://www.linkedin.com/in/markhorn-dev",
+    HREF: "https://github.com/expertcoachingvn-lab"
   }
 ];
