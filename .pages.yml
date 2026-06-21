@@ -1,4 +1,5 @@
 content:
-  - label: Bài viết (Blog)
+  - label: "Bài viết (Blog)"
     type: collection
-    path: src/content/blog
+    path: "src/content/blog"
+    format: "frontmatter"
