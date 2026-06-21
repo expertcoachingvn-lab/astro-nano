@@ -1,23 +1,17 @@
-# Cấu hình thư mục chứa hình ảnh/media
 media:
   input: public
   output: /
 
-# Định nghĩa các thư mục quản lý nội dung khớp chính xác với Astro Content Collections
 content:
   - name: blog
     label: Bài viết (Blog)
     type: collection
     path: src/content/blog
-    filename: '{fields.slug}.md'
+    filename: '{fields.title}.md' # Tự động lấy tiêu đề làm slug tên file
     format: yaml-frontmatter
     view:
       primary: title
     fields:
-      - name: slug
-        label: Đường dẫn tĩnh (Slug - viết liền không dấu, ví dụ: bai-viet-moi)
-        type: string
-        required: true
       - name: title
         label: Tiêu đề bài viết
         type: string
@@ -42,15 +36,11 @@ content:
     label: Kinh nghiệm làm việc (Work)
     type: collection
     path: src/content/work
-    filename: '{fields.slug}.md'
+    filename: '{fields.company}.md' # Tự động lấy tên công ty làm slug tên file
     format: yaml-frontmatter
     view:
       primary: company
     fields:
-      - name: slug
-        label: Tên file định danh (Slug - ví dụ: thiet-ke-web)
-        type: string
-        required: true
       - name: company
         label: Tên công ty
         type: string
@@ -67,7 +57,7 @@ content:
         label: Ngày kết thúc (Nếu còn làm ghi "Present", nếu đã nghỉ thì chọn ngày)
         type: string
         required: true
-        help: "Do hệ thống hỗ trợ cả chữ lẫn ngày, bạn hãy nhập dạng YYYY-MM-DD hoặc chữ 'Present'"
+        help: "Nhập dạng YYYY-MM-DD hoặc chữ 'Present'"
       - name: body
         label: Chi tiết công việc
         type: rich-text
@@ -76,15 +66,11 @@ content:
     label: Dự án cá nhân (Projects)
     type: collection
     path: src/content/projects
-    filename: '{fields.slug}.md'
+    filename: '{fields.title}.md' # Tự động lấy tên dự án làm slug tên file
     format: yaml-frontmatter
     view:
       primary: title
     fields:
-      - name: slug
-        label: Đường dẫn dự án (Slug - ví dụ: phan-mem-quan-ly)
-        type: string
-        required: true
       - name: title
         label: Tên dự án
         type: string
