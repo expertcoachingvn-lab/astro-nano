@@ -1,30 +1,4 @@
-media:
-  input: public
-  output: /
 content:
   - label: Bài viết (Blog)
     type: collection
     path: src/content/blog
-    filename: "{slug}"
-    extension: md
-    format: frontmatter
-    fields:
-      - label: Tiêu đề bài viết
-        type: string
-        name: title
-        required: true
-      - label: Mô tả ngắn (SEO)
-        type: string
-        name: description
-        required: true
-      - label: Ngày xuất bản
-        type: date
-        name: date
-        required: true
-      - label: Bài viết này là nháp?
-        type: boolean
-        name: draft
-        default: false
-      - label: Nội dung bài viết
-        type: rich-text
-        name: body
