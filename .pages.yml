@@ -1,0 +1,87 @@
+content:
+  - label: "Bài viết (Blog)"
+    type: "content"
+    path: "src/content/blog"
+    filename: "{slug}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - label: "Tiêu đề bài viết"
+        type: "string"
+        name: "title"
+        required: true
+      - label: "Mô tả ngắn (SEO)"
+        type: "string"
+        name: "description"
+        required: true
+      - label: "Ngày xuất bản (Dạng: Mar 22 2024)"
+        type: "string"
+        name: "date"
+        required: true
+      - label: "Đặt làm bản nháp?"
+        type: "boolean"
+        name: "draft"
+        default: false
+      - label: "Nội dung bài viết"
+        type: "rich-text"
+        name: "body"
+
+  - label: "Kinh nghiệm (Work)"
+    type: "content"
+    path: "src/content/work"
+    filename: "{slug}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - label: "Tên công ty"
+        type: "string"
+        name: "company"
+        required: true
+      - label: "Vị trí / Vai trò"
+        type: "string"
+        name: "role"
+        required: true
+      - label: "Ngày bắt đầu"
+        type: "string"
+        name: "dateStart"
+        required: true
+      - label: "Ngày kết thúc (Hoặc ghi Present)"
+        type: "string"
+        name: "dateEnd"
+        required: true
+      - label: "Mô tả công việc"
+        type: "rich-text"
+        name: "body"
+
+  - label: "Dự án (Projects)"
+    type: "content"
+    path: "src/content/projects"
+    filename: "{slug}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - label: "Tiêu đề dự án"
+        type: "string"
+        name: "title"
+        required: true
+      - label: "Mô tả dự án"
+        type: "string"
+        name: "description"
+        required: true
+      - label: "Ngày hoàn thành"
+        type: "string"
+        name: "date"
+        required: true
+      - label: "Đặt làm bản nháp?"
+        type: "boolean"
+        name: "draft"
+        default: false
+      - label: "Link chạy thử (Demo URL)"
+        type: "string"
+        name: "demoURL"
+      - label: "Link mã nguồn (Repo URL)"
+        type: "string"
+        name: "repoURL"
+      - label: "Nội dung chi tiết dự án"
+        type: "rich-text"
+        name: "body"
